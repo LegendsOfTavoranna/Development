@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
 
 	public float minZoom, maxZoom, moveSpeed;
 
+	[HideInInspector]
+	public int currentLayer;
+
 	private float zoom;
 	private float zoomDelta;
 	private float xInput;
