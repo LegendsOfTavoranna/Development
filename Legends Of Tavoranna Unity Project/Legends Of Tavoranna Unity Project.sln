@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{34A62748-798A-D324-F8A6-1A427DCF4BE2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Legends Of Tavoranna Unity Project", "Assembly-CSharp.csproj", "{34A62748-798A-D324-F8A6-1A427DCF4BE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +13,9 @@ Global
 		{34A62748-798A-D324-F8A6-1A427DCF4BE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34A62748-798A-D324-F8A6-1A427DCF4BE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34A62748-798A-D324-F8A6-1A427DCF4BE2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0
@@ -49,8 +52,5 @@ Global
 		$2.inheritsSet = Mono
 		$2.inheritsScope = text/x-csharp
 		$2.scope = text/x-csharp
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
