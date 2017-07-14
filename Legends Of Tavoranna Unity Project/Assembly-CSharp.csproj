@@ -47,8 +47,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraMovement.cs" />
+     <Compile Include="Assets\Scripts\Main Menu Scripts\GenericCloseButton.cs" />
      <Compile Include="Assets\Scripts\Main Menu Scripts\LargeLogo.cs" />
-     <Compile Include="Assets\Scripts\Main Menu Scripts\Play.cs" />
+     <Compile Include="Assets\Scripts\Main Menu Scripts\MainMenuController.cs" />
+     <Compile Include="Assets\Scripts\Main Menu Scripts\PlayButton.cs" />
+     <Compile Include="Assets\Scripts\Main Menu Scripts\QuitButton.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
  <Reference Include="Facebook.Unity.Settings">
  <HintPath>C:/Users/Miren/Documents/GitHub/Development/Legends Of Tavoranna Unity Project/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>

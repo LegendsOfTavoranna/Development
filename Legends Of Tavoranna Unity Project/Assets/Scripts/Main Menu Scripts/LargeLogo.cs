@@ -9,18 +9,21 @@ public class LargeLogo : MonoBehaviour
 	public AnimationCurve fadeCurve;
 
 	private float currentAlpha = 0;
+	private float backgroundAlpha = 1;
 
 	private Image largeLogo;
+	private Image background;
 	private float length;
 
 	private void Start ()
 	{
-		
+
 		Keyframe lastKey = fadeCurve.keys[fadeCurve.keys.Length - 1];
 
 		length = lastKey.time + 0.5f;
 
-		largeLogo = GetComponent<Image>();
+		largeLogo = GetComponent <Image>();
+		background = this.transform.parent.gameObject.GetComponent <Image>();
 	}
 
 	private void FixedUpdate ()
@@ -41,7 +44,15 @@ public class LargeLogo : MonoBehaviour
 		if (currentAlpha >= length)
 		{
 
-			this.gameObject.transform.parent.gameObject.SetActive(false);
+			Color color = background.color;
+			color.a = backgroundAlpha;
+			background.color = color;
+			backgroundAlpha -= Time.fixedDeltaTime * 2;
+		}
+		else if (backgroundAlpha <= 0)
+		{
+
+			this.transform.parent.gameObject.SetActive(false);
 			this.gameObject.SetActive(false);
 			this.enabled = false;
 		}
