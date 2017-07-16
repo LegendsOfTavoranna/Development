@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayButton : MonoBehaviour {
+public class PlayButton : MonoBehaviour
+{
 	
 	public GameObject logInPanel;
 

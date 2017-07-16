@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 // Generic quit game button
-public class QuitButton : MonoBehaviour {
+public class QuitButton : MonoBehaviour
+{
 
 	public RectTransform quitMenu;
 
