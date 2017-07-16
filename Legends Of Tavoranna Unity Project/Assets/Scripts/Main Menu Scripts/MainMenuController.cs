@@ -2,7 +2,7 @@
 
 public class MainMenuController : MonoBehaviour {
 
-	public LargeLogo largeLogo;
+	public GameObject largeLogo;
 	public PlayButton playbutton;
 
 	private void Awake () {

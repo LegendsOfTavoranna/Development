@@ -9,6 +9,8 @@ public class LargeLogo : MonoBehaviour
 	public AnimationCurve fadeCurve;
 
 	private float currentAlpha = 0;
+
+	[SerializeField]
 	private float backgroundAlpha = 1;
 
 	private Image largeLogo;
@@ -49,7 +51,7 @@ public class LargeLogo : MonoBehaviour
 			background.color = color;
 			backgroundAlpha -= Time.fixedDeltaTime * 2;
 		}
-		else if (backgroundAlpha <= 0)
+		if (backgroundAlpha <= 0)
 		{
 
 			this.transform.parent.gameObject.SetActive(false);
