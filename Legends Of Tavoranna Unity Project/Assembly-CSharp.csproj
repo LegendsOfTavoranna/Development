@@ -66,16 +66,17 @@
      <Compile Include="Assets\GameSparks\TestUI\GameSparksTestUI.cs" />
      <Compile Include="Assets\Scripts\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\GameSparksManager.cs" />
-     <Compile Include="Assets\Scripts\LogInPlayer.cs" />
      <Compile Include="Assets\Scripts\Main Menu Scripts\GenericCloseButton.cs" />
      <Compile Include="Assets\Scripts\Main Menu Scripts\LargeLogo.cs" />
+     <Compile Include="Assets\Scripts\Main Menu Scripts\LogInPlayer.cs" />
      <Compile Include="Assets\Scripts\Main Menu Scripts\MainMenuController.cs" />
      <Compile Include="Assets\Scripts\Main Menu Scripts\NewsPanel.cs" />
      <Compile Include="Assets\Scripts\Main Menu Scripts\PlayButton.cs" />
      <Compile Include="Assets\Scripts\Main Menu Scripts\QuitButton.cs" />
+     <Compile Include="Assets\Scripts\Main Menu Scripts\RegisterButton.cs" />
+     <Compile Include="Assets\Scripts\Main Menu Scripts\RegisterPlayer.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerData.cs" />
-     <Compile Include="Assets\Scripts\RegisterPlayer.cs" />
      <None Include="Assets\GameSparks\Plugins\GameSparksRT.xml" />
      <None Include="Assets\GameSparks\Plugins\Metro\GameSparksRT.xml" />
      <None Include="Assets\GameSparks\README.txt" />
@@ -105,17 +106,17 @@
  <Reference Include="UnityEngine.VR">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
  </Reference>
+ <Reference Include="BouncyCastle_GameSparks">
+ <HintPath>C:/Users/Miren/Documents/GitHub/Development/Legends Of Tavoranna Unity Project/Assets/GameSparks/Plugins/BouncyCastle_GameSparks.dll</HintPath>
+ </Reference>
+ <Reference Include="GameSparks.Api">
+ <HintPath>C:/Users/Miren/Documents/GitHub/Development/Legends Of Tavoranna Unity Project/Assets/GameSparks/Plugins/GameSparks.Api.dll</HintPath>
+ </Reference>
  <Reference Include="GameSparks">
  <HintPath>C:/Users/Miren/Documents/GitHub/Development/Legends Of Tavoranna Unity Project/Assets/GameSparks/Plugins/GameSparks.dll</HintPath>
  </Reference>
  <Reference Include="GameSparksRT">
  <HintPath>C:/Users/Miren/Documents/GitHub/Development/Legends Of Tavoranna Unity Project/Assets/GameSparks/Plugins/GameSparksRT.dll</HintPath>
- </Reference>
- <Reference Include="GameSparks.Api">
- <HintPath>C:/Users/Miren/Documents/GitHub/Development/Legends Of Tavoranna Unity Project/Assets/GameSparks/Plugins/GameSparks.Api.dll</HintPath>
- </Reference>
- <Reference Include="BouncyCastle_GameSparks">
- <HintPath>C:/Users/Miren/Documents/GitHub/Development/Legends Of Tavoranna Unity Project/Assets/GameSparks/Plugins/BouncyCastle_GameSparks.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>

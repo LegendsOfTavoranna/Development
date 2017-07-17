@@ -3,9 +3,11 @@ using UnityEngine.UI;
 
 public class RegisterPlayer : MonoBehaviour {
 
-	public Text displayNameInput, userNameInput, passwordInput, emailAddressInput;
+	public Text emailAddressInput, displayNameInput, userNameInput, passwordInput, confirmPasswordInput;
 
 	public void RegisterPlayerButton () {
+
+
 
 		Debug.Log("Contacting...");
 
