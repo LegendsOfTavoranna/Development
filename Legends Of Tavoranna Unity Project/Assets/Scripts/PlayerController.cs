@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
-using UnityEditor;
+using UnityStandardAssets.Cameras;
 
 public class PlayerController : MonoBehaviour
 {
 
-	public Camera main;
+	private Camera main;
+	public GameObject pivot, cameraTarget;
 
 	public float minZoom, maxZoom, moveSpeed;
+	public float minTargetHeight, maxTargetHeight;
 
 	[HideInInspector]
 	public int currentLayer;
@@ -14,6 +16,9 @@ public class PlayerController : MonoBehaviour
 	private float zoom;
 	private float zoomDelta;
 	private float xInput;
+	private float yInput;
+	private float xInputRaw;
+	private float yInputRaw;
 
 	private Vector3 oldPosition;
 	private Rigidbody rigidBody;
@@ -21,6 +26,7 @@ public class PlayerController : MonoBehaviour
 	private void Start ()
 	{
 
+		main = Camera.main;
 		rigidBody = GetComponent<Rigidbody>();
 	}
 
@@ -28,26 +34,30 @@ public class PlayerController : MonoBehaviour
 	{
 
 		xInput = Input.GetAxis("Horizontal");
+		yInput = Input.GetAxis("Vertical");
+		xInputRaw = Input.GetAxisRaw("Horizontal");
+		yInputRaw = Input.GetAxisRaw("Vertical");
 
 		zoomDelta = Input.GetAxis("Mouse ScrollWheel");
 
 		if (zoomDelta != 0)
 		{
 
-            AdjustZoom(zoomDelta);
+			AdjustZoom(-zoomDelta);
 		}
 
 		if (oldPosition != transform.localPosition)
 		{
-
-			AdjustPosition(xInput);
+			
+			AdjustPosition(xInput, yInput);
 			oldPosition = transform.localPosition;
 
 		}
-		else if (xInput != 0f)
+		else if (xInputRaw != 0f || yInputRaw != 0f)
 		{
 
-			AdjustPosition(xInput);
+			AdjustRotation();
+			AdjustPosition(xInput, yInput);
 			oldPosition = transform.localPosition;
 		}
 
@@ -55,17 +65,8 @@ public class PlayerController : MonoBehaviour
 		{
 
 
-			rigidBody.AddForce(Vector3.up * 500);
+			rigidBody.AddForce(Vector3.up * 300);
 		}
-	}
-
-	private void OnCollisionEnter (Collision collision) { 
-
-//		if (collision.collider.tag == "Floor")
-//		{
-//
-//
-//		}
 	}
 
 	private void AdjustZoom (float delta)
@@ -75,16 +76,34 @@ public class PlayerController : MonoBehaviour
 		
         float distance = Mathf.Lerp(minZoom, maxZoom, zoom);
 
-		main.transform.localPosition = new Vector3(0, 0, -distance);
+		var pos = new Vector3(0, 0, distance);
+
+		pivot.transform.localPosition = pos;
+
+		distance = Mathf.Lerp(maxTargetHeight, minTargetHeight, zoom);
+
+		pos = new Vector3(0, distance, 0);
+		cameraTarget.transform.localPosition = pos;
 	}
 
-	private void AdjustPosition (float xInput)
+	private void AdjustRotation ()
 	{
 
-		Vector3 direction = new Vector3(xInput, 0) * moveSpeed * (Input.GetKey(KeyCode.LeftShift) ? 2 : 1);
+		Vector3 pos = main.gameObject.transform.position;
+		pos.y = transform.position.y;
+
+		transform.LookAt(pos);
+	}
+
+	private void AdjustPosition (float xInput, float yInput)
+	{
+
+		Vector3 direction = transform.localRotation * new Vector3(-xInput, 0f, -yInput).normalized;
+		float distance = Time.deltaTime * moveSpeed;
+
 		Vector3 position = transform.localPosition;
 
-		position += direction;
+		position += direction * distance;
 
 		transform.localPosition = position;
 	}

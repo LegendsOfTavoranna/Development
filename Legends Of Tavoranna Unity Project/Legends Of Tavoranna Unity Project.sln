@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Legends Of Tavoranna Unity Project", "Assembly-CSharp-firstpass.csproj", "{220E3770-5D2E-65EC-527F-00D922631AE8}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Legends Of Tavoranna Unity Project", "Assembly-CSharp.csproj", "{34A62748-798A-D324-F8A6-1A427DCF4BE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Legends Of Tavoranna Unity Project", "Assembly-CSharp-Editor-firstpass.csproj", "{7A9C873F-8175-5B06-DC98-27736F7C9CE4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Legends Of Tavoranna Unity Project", "Assembly-CSharp-Editor.csproj", "{72CC5733-0C61-02E9-54B6-23864C1210B9}"
 EndProject
@@ -11,10 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{220E3770-5D2E-65EC-527F-00D922631AE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{220E3770-5D2E-65EC-527F-00D922631AE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{220E3770-5D2E-65EC-527F-00D922631AE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{220E3770-5D2E-65EC-527F-00D922631AE8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{34A62748-798A-D324-F8A6-1A427DCF4BE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{34A62748-798A-D324-F8A6-1A427DCF4BE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34A62748-798A-D324-F8A6-1A427DCF4BE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34A62748-798A-D324-F8A6-1A427DCF4BE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A9C873F-8175-5B06-DC98-27736F7C9CE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A9C873F-8175-5B06-DC98-27736F7C9CE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A9C873F-8175-5B06-DC98-27736F7C9CE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A9C873F-8175-5B06-DC98-27736F7C9CE4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{72CC5733-0C61-02E9-54B6-23864C1210B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{72CC5733-0C61-02E9-54B6-23864C1210B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72CC5733-0C61-02E9-54B6-23864C1210B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
