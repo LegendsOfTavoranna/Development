@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayButton : MonoBehaviour
 {
@@ -9,23 +7,19 @@ public class PlayButton : MonoBehaviour
 
 	private bool isLoggedIn = false;
 
-	public void Start () {
-
-		logInPanel.SetActive(false);
-	}
-
 	public void PlayButtonPress ()
 	{
 
 		if (isLoggedIn)
 		{
 
-			//start game stuff
+			FindObjectOfType<MainMenuController>().PlayButtonPress();
 		}
 		else
 		{
 
 			logInPanel.SetActive(true);
+			MainMenuController.darkness.SetActive(true);
 		}
 	}
 }

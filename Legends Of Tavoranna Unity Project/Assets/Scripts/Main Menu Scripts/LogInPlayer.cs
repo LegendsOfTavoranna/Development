@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class LogInPlayer : MonoBehaviour
@@ -19,6 +17,8 @@ public class LogInPlayer : MonoBehaviour
 			.Send((response) =>
 			{
 
+				
+
 				if (!response.HasErrors)
 				{
 
@@ -26,7 +26,7 @@ public class LogInPlayer : MonoBehaviour
 				}
 				else
 				{
-
+					
 					Debug.Log("Error Authentacing Player... \n " + response.Errors.JSON.ToString());
 				}
 			});
