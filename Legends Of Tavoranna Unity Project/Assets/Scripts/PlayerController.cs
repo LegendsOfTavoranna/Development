@@ -15,8 +15,6 @@ public class PlayerController : MonoBehaviour
 
 	private float zoom;
 	private float zoomDelta;
-	private float xInput;
-	private float yInput;
 	private float xInputRaw;
 	private float yInputRaw;
 
@@ -33,8 +31,6 @@ public class PlayerController : MonoBehaviour
 	private void FixedUpdate ()
 	{
 
-		xInput = Input.GetAxis("Horizontal");
-		yInput = Input.GetAxis("Vertical");
 		xInputRaw = Input.GetAxisRaw("Horizontal");
 		yInputRaw = Input.GetAxisRaw("Vertical");
 
@@ -49,7 +45,8 @@ public class PlayerController : MonoBehaviour
 		if (oldPosition != transform.localPosition)
 		{
 			
-			AdjustPosition(xInput, yInput);
+			AdjustRotation();
+			AdjustPosition(xInputRaw, yInputRaw);
 			oldPosition = transform.localPosition;
 
 		}
@@ -57,13 +54,12 @@ public class PlayerController : MonoBehaviour
 		{
 
 			AdjustRotation();
-			AdjustPosition(xInput, yInput);
+			AdjustPosition(xInputRaw, yInputRaw);
 			oldPosition = transform.localPosition;
 		}
 
 		if (Input.GetKeyDown (KeyCode.Space))
 		{
-
 
 			rigidBody.AddForce(Vector3.up * 300);
 		}
