@@ -1,7 +1,11 @@
 ﻿using UnityEngine;
 
-public class PlayerData : MonoBehaviour
+public static class PlayerData
 {
 
+	public static void Initialize ()
+	{
 
+
+	}
 }
