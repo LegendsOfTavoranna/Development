@@ -35,21 +35,26 @@ public class MainMenuController : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
+			Escape();
+		}
+	}
 
-			foreach (GameObject obj in HideOnStart)
+	public void Escape ()
+	{
+		
+		foreach (GameObject obj in HideOnStart)
+		{
+
+			if (obj.activeSelf)
 			{
-
-				if (obj.activeSelf)
+				if (HideOnStart[3] == obj)
 				{
-					if (HideOnStart[3] == obj)
-					{
 
-						MainMenuController.darkness.SetActive(false);
-					}
-
-					obj.SetActive(false);
-					break;
+					MainMenuController.darkness.SetActive(false);
 				}
+
+				obj.SetActive(false);
+				break;
 			}
 		}
 	}

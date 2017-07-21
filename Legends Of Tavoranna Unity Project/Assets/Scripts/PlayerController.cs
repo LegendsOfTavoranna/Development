@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 	private Camera main;
 	public GameObject pivot, cameraTarget;
 
+	public FreeLookCam cameraController;
+
 	public float minZoom, maxZoom, moveSpeed;
 	public float minTargetHeight, maxTargetHeight;
 
@@ -21,47 +23,81 @@ public class PlayerController : MonoBehaviour
 	private Vector3 oldPosition;
 	private Rigidbody rigidBody;
 
+	private bool escapeKeyToggle = true;
+
 	private void Start ()
 	{
 
 		main = Camera.main;
 		rigidBody = GetComponent<Rigidbody>();
+
+		Cursor.visible = false;
+		Cursor.lockState = CursorLockMode.Locked;
 	}
 
 	private void FixedUpdate ()
 	{
 
-		xInputRaw = Input.GetAxisRaw("Horizontal");
-		yInputRaw = Input.GetAxisRaw("Vertical");
-
-		zoomDelta = Input.GetAxis("Mouse ScrollWheel");
-
-		if (zoomDelta != 0)
+		if (Input.GetKeyDown(KeyCode.Escape))
 		{
 
-			AdjustZoom(-zoomDelta);
+			MouseVisiblityToggle();
 		}
 
-		if (oldPosition != transform.localPosition)
+		if (escapeKeyToggle)
 		{
+
+			xInputRaw = Input.GetAxisRaw("Horizontal");
+			yInputRaw = Input.GetAxisRaw("Vertical");
+
+			zoomDelta = Input.GetAxis("Mouse ScrollWheel");
+
+			if (zoomDelta != 0)
+			{
+
+				AdjustZoom(-zoomDelta);
+			}
+
+			if (oldPosition != transform.localPosition)
+			{
 			
-			AdjustRotation();
-			AdjustPosition(xInputRaw, yInputRaw);
-			oldPosition = transform.localPosition;
+				AdjustRotation();
+				AdjustPosition(xInputRaw, yInputRaw);
+				oldPosition = transform.localPosition;
 
+			}
+			else if (xInputRaw != 0f || yInputRaw != 0f)
+			{
+
+				AdjustRotation();
+				AdjustPosition(xInputRaw, yInputRaw);
+				oldPosition = transform.localPosition;
+			}
+
+			if (Input.GetKeyDown(KeyCode.Space))
+			{
+
+				rigidBody.AddForce(Vector3.up * 300);
+			}
 		}
-		else if (xInputRaw != 0f || yInputRaw != 0f)
+	}
+
+	public void MouseVisiblityToggle () {
+
+		if (Cursor.visible)
+		{
+			Cursor.visible = false;
+			escapeKeyToggle = true;
+			cameraController.enabled = true;
+			Cursor.lockState = CursorLockMode.Locked;
+		}
+		else
 		{
 
-			AdjustRotation();
-			AdjustPosition(xInputRaw, yInputRaw);
-			oldPosition = transform.localPosition;
-		}
-
-		if (Input.GetKeyDown (KeyCode.Space))
-		{
-
-			rigidBody.AddForce(Vector3.up * 300);
+			Cursor.visible = true;
+			escapeKeyToggle = false;
+			cameraController.enabled = false;
+			Cursor.lockState = CursorLockMode.None;
 		}
 	}
 

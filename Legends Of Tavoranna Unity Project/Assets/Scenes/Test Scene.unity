@@ -231,6 +231,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114932106018826758, guid: 361c7d70425ba514890015d771ac0dd2,
+        type: 2}
+      propertyPath: sphereCastRadius
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114932106018826758, guid: 361c7d70425ba514890015d771ac0dd2,
+        type: 2}
+      propertyPath: closestDistance
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 361c7d70425ba514890015d771ac0dd2, type: 2}
   m_IsPrefabParent: 0

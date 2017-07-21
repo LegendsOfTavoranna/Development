@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-// drop this on a close button, set the rectTransform to the parent object and let it do the rest of the work
+// drop this on a close button, set the rectTransform to the parent object and mainMenuController to the MainMenuController script
 public class GenericCloseButton : MonoBehaviour
 {
+
+	public MainMenuController mainMenuController;
 
 	public RectTransform parent;
 
@@ -20,7 +22,6 @@ public class GenericCloseButton : MonoBehaviour
 	public void CloseButton ()
 	{
 		
-		parent.gameObject.SetActive(false);
-		MainMenuController.darkness.SetActive(false);
+		mainMenuController.Escape();
 	}
 }
