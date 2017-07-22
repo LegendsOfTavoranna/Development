@@ -26,8 +26,13 @@ public class RegisterPlayer : MonoBehaviour {
 		Initialize();
 	}
 
-	private void Initialize ()
+	public void Initialize ()
 	{
+
+		username.Input.text = "";
+		emailAddress.Input.text = "";
+		password.Input.text = "";
+		confirmPassword.Input.text = "";
 
 		emailAddress.InputErrorBox.gameObject.SetActive(false);
 		username.InputErrorBox.gameObject.SetActive(false);

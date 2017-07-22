@@ -12,6 +12,7 @@ public class RegisterButton : MonoBehaviour
 		{
 
 			registerPanel.SetActive(true);
+			registerPanel.GetComponentInChildren<RegisterPlayer>().Initialize();
 		}
 	}
 }

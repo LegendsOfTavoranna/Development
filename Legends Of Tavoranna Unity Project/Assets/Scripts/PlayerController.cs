@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
 		{
 			Cursor.visible = false;
 			escapeKeyToggle = true;
-			cameraController.enabled = true;
+			cameraController.cameraInput = true;
 			Cursor.lockState = CursorLockMode.Locked;
 		}
 		else
@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
 
 			Cursor.visible = true;
 			escapeKeyToggle = false;
-			cameraController.enabled = false;
+			cameraController.cameraInput = false;
 			Cursor.lockState = CursorLockMode.None;
 		}
 	}

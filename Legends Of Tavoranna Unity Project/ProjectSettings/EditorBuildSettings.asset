@@ -6,5 +6,5 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Test Scene.unity
-    guid: 418df47d395b65b4a96e45806ed7f347
+    path: Assets/Scenes/Miren Main Menu.unity
+    guid: b80c69b76199fcc4da759c639d88b0e8
