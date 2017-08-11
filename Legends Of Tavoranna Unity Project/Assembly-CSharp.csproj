@@ -67,6 +67,15 @@
      <Compile Include="Assets\GameSparks\TestUI\GameSparksTestUI.cs" />
      <Compile Include="Assets\Scripts\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\GameSparksManager.cs" />
+     <Compile Include="Assets\Scripts\Level Generation\Block.cs" />
+     <Compile Include="Assets\Scripts\Level Generation\CalculateMeshData.cs" />
+     <Compile Include="Assets\Scripts\Level Generation\Generator.cs" />
+     <Compile Include="Assets\Scripts\Level Generation\Map.cs" />
+     <Compile Include="Assets\Scripts\Level Generation\MeshData.cs" />
+     <Compile Include="Assets\Scripts\Level Generation\Tile.cs" />
+     <Compile Include="Assets\Scripts\Level Generation\TileDirection.cs" />
+     <Compile Include="Assets\Scripts\Level Generation\TileFace.cs" />
+     <Compile Include="Assets\Scripts\Level Generation\TileVertices.cs" />
      <Compile Include="Assets\Scripts\Main Menu Scripts\GenericCloseButton.cs" />
      <Compile Include="Assets\Scripts\Main Menu Scripts\LargeLogo.cs" />
      <Compile Include="Assets\Scripts\Main Menu Scripts\LogInPlayer.cs" />
@@ -84,6 +93,7 @@
      <None Include="Assets\GameSparks\README.txt" />
      <None Include="Assets\GameSparks\Thank you for joining GameSparks.txt" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+     <None Include="Assets\Scripts\Level Generation\Shaders\VertexColors.shader" />
      <None Include="Assets\GameSparks\link.xml" />
      <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />
  <Reference Include="Facebook.Unity.Settings">

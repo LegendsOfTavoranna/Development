@@ -29,6 +29,9 @@ namespace UnityStandardAssets.Cameras
 		private Quaternion m_TransformTargetRot;
 
 		public bool cameraInput = true;
+		public CameraMode cameraMode = CameraMode.Platformer;
+
+		public enum CameraMode { ThirdPerson, Platformer }
 
         protected override void Awake()
         {
@@ -77,7 +80,7 @@ namespace UnityStandardAssets.Cameras
 			float x = 0, y = 0;
 
             // Read the user input
-			if (cameraInput)
+			if (cameraInput && cameraMode == CameraMode.ThirdPerson)
 			{
 				x = CrossPlatformInputManager.GetAxis("Mouse X");
 				y = CrossPlatformInputManager.GetAxis("Mouse Y");
